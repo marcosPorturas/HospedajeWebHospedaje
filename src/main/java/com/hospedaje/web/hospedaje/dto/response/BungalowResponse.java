@@ -1,22 +1,18 @@
 package com.hospedaje.web.hospedaje.dto.response;
 
 import lombok.AllArgsConstructor;
-import lombok.experimental.SuperBuilder;
+import lombok.Builder;
 
-@SuperBuilder
+
+@Builder
 @AllArgsConstructor
 public class BungalowResponse {
 
-	private Integer id;
+	private Integer idBungalow;
 	private String categoria;
 	private Double precioDia;
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 	public String getCategoria() {
 		return categoria;
 	}
@@ -28,5 +24,11 @@ public class BungalowResponse {
 	}
 	public void setPrecioDia(Double precioDia) {
 		this.precioDia = precioDia;
+	}
+	public Integer getIdBungalow() {
+		return idBungalow;
+	}
+	public void setIdBungalow(Integer idBungalow) {
+		this.idBungalow = idBungalow;
 	}
 }

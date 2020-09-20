@@ -40,7 +40,7 @@ public class HospedajeServiceImplement implements HospedajeService{
 		
 		Mono<HospedajeStatus> singleHospedajeStatus = hospedajeStatusRepository.findById(0);
 		
-		Mono<IngresoResponse> singleIngreso = ingresoProxy.consultarIngreso(hospedajeRequest.getIdBungalow());
+		Mono<IngresoResponse> singleIngreso = ingresoProxy.consultarIngreso(hospedajeRequest.getIdIngreso());
 		
 		Mono<BungalowResponse> singleBungalow = bungalowProxy.consultarBungalow(hospedajeRequest.getIdBungalow());
 	
@@ -68,7 +68,7 @@ public class HospedajeServiceImplement implements HospedajeService{
 		return HospedajeResponse.builder()
 				.idHospedaje(hospedaje.getId())
 				.idIngreso(hospedaje.getIdIngreso())
-				.idBungalow(hospedaje.getBungalow().getId())
+				.idBungalow(hospedaje.getBungalow().getIdBungalow())
 				.fechaIngreso(hospedaje.getCreationDate())
 				.build();
 	}
